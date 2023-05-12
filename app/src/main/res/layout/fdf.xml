@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/score_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:backgroundTint="#FFEB3B"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/score_title_text_view"
+            android:layout_width="344dp"
+            android:layout_height="70dp"
+            android:text="Your Score"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:srcCompat="@drawable/gameover" />
+
+        <TextView
+            android:id="@+id/score_text_view"
+            android:layout_width="344dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/play_again_button"
+            android:layout_width="349dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Play Again" />
+
+        <Button
+            android:id="@+id/score_home"
+            android:layout_width="349dp"
+            android:layout_height="58dp"
+            android:gravity="center"
+            android:text="Home" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
