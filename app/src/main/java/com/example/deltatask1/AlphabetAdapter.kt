@@ -28,14 +28,17 @@ class AlphabetAdapter(
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view =
-            LayoutInflater.from(parent!!.context).inflate(R.layout.alphabetgrid, parent, false)
+        val view = LayoutInflater.from(parent!!.context).inflate(R.layout.alphabetgrid, parent, false)
 
         var alphabet: TextView = view.findViewById(R.id.textView)
 
         alphabet.text = shuffledText[position].toString()
 
         alphabet.setBackgroundResource(R.drawable.text_selector)
+
+
+
+
 
         Log.d("AlphabetAdapter", "Letter at position $position is ${shuffledText[position]}")
 
@@ -44,6 +47,11 @@ class AlphabetAdapter(
     fun getRandomLetter(): Char {
         val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         return alphabet.random()
+    }
+
+    fun shuffle() {
+        shuffledText = shuffledText.shuffled()
+        notifyDataSetChanged()
     }
 
 

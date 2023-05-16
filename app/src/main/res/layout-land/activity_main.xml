@@ -13,7 +13,7 @@
         android:id="@+id/editTextTextPersonName3"
         android:layout_width="288dp"
         android:layout_height="54dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="32dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:ems="10"
         android:gravity="center"
@@ -24,15 +24,15 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.993"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridtitlebar" />
+        app:layout_constraintTop_toBottomOf="@+id/wordjumble" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
         android:layout_width="288dp"
         android:layout_height="52dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="32dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:ems="10"
         android:gravity="center"
@@ -41,22 +41,22 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/wordjumble" />
 
     <Button
         android:id="@+id/classicbtn"
+        style="style/classicandspeedbtn"
         android:layout_width="154dp"
         android:layout_height="54dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="12dp"
         android:text="CLASSIC"
         android:textColor="@color/white"
         android:textSize="20dp"
-        style="style/classicandspeedbtn"
         app:backgroundTint="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
@@ -64,7 +64,7 @@
         android:id="@+id/textView2"
         android:layout_width="147dp"
         android:layout_height="33dp"
-        android:background="@drawable/worddesign"
+        android:background="@android:drawable/button_onoff_indicator_off"
         android:backgroundTint="#FFEB3B"
         android:fontFamily="monospace"
         android:text="WORD"
@@ -73,13 +73,15 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/wordjumble"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/gridtitlebar"
         android:layout_width="147dp"
         android:layout_height="33dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:backgroundTint="#FFEB3B"
         android:fontFamily="monospace"
@@ -89,14 +91,16 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextNumber1"
-        app:layout_constraintTop_toBottomOf="@+id/wordjumble" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="147dp"
         android:layout_height="33dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:backgroundTint="#FFEB3B"
         android:text="CLUE"
@@ -105,13 +109,15 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/wordjumble"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/wordjumble"
         android:layout_width="126dp"
         android:layout_height="110dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/lobster_two"
         android:gravity="center"
         android:text="Word Jumble"
@@ -119,7 +125,7 @@
         android:textColor="#00BCD4"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -131,29 +137,32 @@
         android:foregroundGravity="center"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/crown" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="157dp"
-        android:layout_height="9dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="462dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/helloline" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="163dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="390dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/helloline" />
 
@@ -169,10 +178,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridtitlebar"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextNumber2"
@@ -186,58 +195,54 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridtitlebar"
-        app:layout_constraintVertical_bias="0.875" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="44dp"
         android:layout_height="33dp"
+        android:layout_marginTop="8dp"
         android:background="@android:drawable/btn_dialog"
         android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toEndOf="@+id/editTextNumber1"
-        app:layout_constraintTop_toBottomOf="@+id/gridtitlebar"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintTop_toBottomOf="@+id/gridtitlebar" />
 
     <Button
         android:id="@+id/savebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:text="SAVE"
-        app:layout_constraintBottom_toTopOf="@+id/classicbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintTop_toBottomOf="@+id/wordjumble" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="154dp"
         android:layout_height="54dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="44dp"
         android:text="speedrun"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:backgroundTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/savebtn" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
     <Switch
         android:id="@+id/daynightmode"
         android:layout_width="60dp"
         android:layout_height="61dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
         android:text="@null"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.392"
-        app:layout_constraintStart_toEndOf="@+id/wordjumble"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

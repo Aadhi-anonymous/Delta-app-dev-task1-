@@ -3,7 +3,6 @@ package com.example.deltatask1
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -13,19 +12,10 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.size
-import java.security.Key
 import java.util.*
 import kotlin.collections.HashMap
 
-class MainActivity2 : AppCompatActivity() {
-
-    private var gottenSecond1: Long = 0L
-    private lateinit var timer: CountDownTimer
-    private var startTimerInMillis: Long = 0L
-    private var timeLeftInMillis: Long = 0L
-
+class MainActivity3 : AppCompatActivity() {
     lateinit var gridView: GridView
     lateinit var resultText: TextView
     lateinit var clueText: TextView
@@ -38,35 +28,7 @@ class MainActivity2 : AppCompatActivity() {
     lateinit var heartimg2 : ImageView
     lateinit var heartimg3 : ImageView
 
-
-
-
-
     var yourScore: Int = 0
-
-    fun StartTimer()
-    {
-        timer = object : CountDownTimer(timeLeftInMillis,1000)
-        {
-            override fun onTick(millisUntilFinished: Long) {
-                timeLeftInMillis = millisUntilFinished
-                updateText()
-
-            }
-
-            override fun onFinish() {
-
-                scoredialogBox()
-                val seconds = gottenSecond1
-                val timeLeftFormatted = String.format(Locale.getDefault(), "%02d",  seconds)
-                clock.text = timeLeftFormatted
-
-
-            }
-
-        }
-        timer.start()
-    }
 
 
     fun scoredialogBox()
@@ -93,22 +55,12 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    fun updateText()
-    {
-        val seconds = (timeLeftInMillis / 1000)
-        val timeLeftFormatted = String.format(Locale.getDefault(), "%02d",  seconds)
-        clock.text = timeLeftFormatted
-    }
-
-
-
-
 
 
     @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_main3)
 
         gridView = findViewById(R.id._dynamic)
         resultText = findViewById(R.id.resultText)
@@ -118,16 +70,6 @@ class MainActivity2 : AppCompatActivity() {
         heartimg1 = findViewById(R.id.heart1)
         heartimg2 = findViewById(R.id.heart2)
         heartimg3 = findViewById(R.id.heart3)
-        clock = findViewById(R.id.clock)
-
-
-
-        // Get the intent and initialize the variable inside the onCreate method
-        gottenSecond1 = intent.getLongExtra("gottenSecond", 60)
-        timeLeftInMillis = gottenSecond1 * 1000
-        startTimerInMillis = timeLeftInMillis
-        StartTimer()
-        Log.d("inputtime","$gottenSecond1")
 
 
 
@@ -167,10 +109,9 @@ class MainActivity2 : AppCompatActivity() {
         }
 
 
-
         val wordmap1: HashMap<Int, String> =
             intent.getSerializableExtra("wordmap") as HashMap<Int, String>
-         resultText.text = dash(wordmap1[i].toString())
+        resultText.text = dash(wordmap1[i].toString())
 
 
 
@@ -203,20 +144,20 @@ class MainActivity2 : AppCompatActivity() {
 
         }
 
-    var f =0
+        var f =0
         gridView.setOnItemClickListener { adapterView, view, position, id ->
-        if(f!=0){
-            val letter = view.findViewById<TextView>(R.id.textView).text.toString()
+            if(f!=0){
+                val letter = view.findViewById<TextView>(R.id.textView).text.toString()
 
                 resultText.text = resultText.text.substring(0,f) + letter + resultText.text.substring(f + 1)
 
             }
             else{
-            val letter = view.findViewById<TextView>(R.id.textView).text.toString()
+                val letter = view.findViewById<TextView>(R.id.textView).text.toString()
 
-            resultText.text = letter + resultText.text.substring(1)
-        }
-f=f+1
+                resultText.text = letter + resultText.text.substring(1)
+            }
+            f=f+1
         }
 
         var number1 = intent.getIntExtra("number", 0).toInt()
@@ -365,7 +306,7 @@ f=f+1
 
         resetbtn.setOnClickListener {
             resultText.text = dash(wordmap1[i].toString())
-           f=0
+            f=0
 
             Toast.makeText(applicationContext, "Text is cleared", Toast.LENGTH_SHORT).show()
 
@@ -375,36 +316,26 @@ f=f+1
     }
 
 
-        private fun resetGame(wordmap1: HashMap<Int, String>, shuffledText: CharArray) {
-
-        }
-
-        fun getRandomLetter(): Char {
-            val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            return alphabet.random()
-        }
-
-
-       fun dash(word:String) : String
-       {
-           var a : Int  = 0
-           var b : String = ""
-
-           while (a <word.length)
-           {
-               b+="#"
-               a+=1
-           }
-           return b
-       }
-
-
-
+    private fun resetGame(wordmap1: HashMap<Int, String>, shuffledText: CharArray) {
 
     }
 
+    fun getRandomLetter(): Char {
+        val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        return alphabet.random()
+    }
 
 
+    fun dash(word:String) : String
+    {
+        var a : Int  = 0
+        var b : String = ""
 
-
-
+        while (a <word.length)
+        {
+            b+="#"
+            a+=1
+        }
+        return b
+    }
+}
